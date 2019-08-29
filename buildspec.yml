@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - sam build
+      - sam package --s3-bucket cf-templates-mqlo738sc9ly-us-east-1 --output-template-file outputSamTemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - outputSamTemplate.yaml
